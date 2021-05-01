@@ -10,7 +10,7 @@ UltraJS is the perfect framework to be used alongside vanilla JavaScript. Saving
 
 ## Basic Usage
 
-UltraJS makes writing JavaScript so much easier, while supporting the use of vanilla JavaScript. The following example below logs the innerHTML of every paragraph element (`<p>`) clicked.
+UltraJS makes writing JavaScript so much easier, while supporting the use of vanilla JavaScript. The following example below alerts the innerHTML of every paragraph element (`<p>`) clicked.
 
 ```javascript
 f('p').listen('click', function(e){
