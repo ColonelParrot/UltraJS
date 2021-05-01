@@ -4,7 +4,7 @@
 
 UltraJS uses the `f()` selector to select objects. It is based on CSS Selectors, and has the ability to select elements by id, class, tag name, attribute, etc,.
 
-For example, to select the element with the id `test,` use:
+For example, to select the element with the id `test`, use:
 
 ```javascript
 f('#test')
