@@ -122,3 +122,7 @@ f('input').value('Hello World!');
 ### `.hide(renderSpace)`
 
 The `.hide()` function hides the selected elements. If the parameter is set to `true`, it will preserve the space allocated for the element.
+
+### `.prop(prop)`
+
+The `.prop()` function gets the value of the property specified in the parameter.
