@@ -33,21 +33,6 @@ f('p').listen('click', function(e){
 
 See: [Documentation](https://github.com/ColonelParrot/UltraJS/blob/main/documentation/docs.md)
 
-- The `f` selector
-- `.through()`
-- `.listen()`
-- `.elem()`
-- `.get()`
-- `.raw()`
-- `.attr()`
-- `.prop()`
-- `.styles()`
-- `.append()`
-- `.dimensions()`
-- `.remove()`
-- `.value()`
-- `.hide()`
-
 ## Report an issue
 
 Encountering an issue? Submit an issue ticket [here](https://github.com/ColonelParrot/UltraJS/issues/new), but make sure that it hasn't been submitted [before](https://github.com/ColonelParrot/UltraJS/issues)
