@@ -26,7 +26,7 @@ f('p').listen('click', function(e){
 
 - JSDelivr
 ```html
-<script src="https://cdn.jsdelivr.net/gh/ColonelParrot/UltraJS@0.1/src/ultra-js.min.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/ColonelParrot/UltraJS@0.2/src/ultra-js.min.js"></script>
 ```
 
 ## Capabilities
