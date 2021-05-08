@@ -72,6 +72,14 @@ For example:
 f('img').get(0).attr('src') // returns the source of the image
 f('img').get(0).attr('src', 'path/to/img') // changes the source of the image to 'path/to/img'
 ```
+### `.prop(prop)`
+
+The `.prop()` function gets the value of the property specified in the parameter.
+
+### `style(name)`
+
+The `.style()` function gets the value of a style.
+
 ### `.styles(json)`
 
 The `.styles()` function sets the style of the selected elements. It accepts a JSON.
@@ -123,6 +131,6 @@ f('input').value('Hello World!');
 
 The `.hide()` function hides the selected elements. If the parameter is set to `true`, it will preserve the space allocated for the element.
 
-### `.prop(prop)`
+### `.show()`
 
-The `.prop()` function gets the value of the property specified in the parameter.
+The `.show()` function shows the selected elements.
