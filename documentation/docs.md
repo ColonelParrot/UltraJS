@@ -192,3 +192,19 @@ returns:
 length: 3
 __proto__: Array(0)
 ```
+
+## UltraJS Utilities [new]
+
+UltraJS utilities are accessed via the `window.UltraJS` object. They are useful additions to your web application.
+
+The methods are:
+
+### `.injectScript(src, integrity, crossorigin)`
+
+The `.injectScript()` function injects scripts dynamically **even after the page has completed loading**, although it works either way. The `integrity` and `crossorigin` parameters are optional.
+
+For example, to inject a script, use:
+
+```javascript
+UltraJS.injectScript("path/to/your/script.js")
+```
