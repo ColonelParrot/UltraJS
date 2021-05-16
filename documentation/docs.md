@@ -10,7 +10,7 @@ For example, to select the element with the id `test`, use:
 f('#test')
 ```
 
-The `f()` selector also accepts a second argument, the scope. For example, `f('#test')` is equivalent to `f('#test', document)`.
+The `f()` selector also accepts a second argument, the scope. For example, `f('#test')` is equivalent to `f('#test', document)`. (removed in version 0.2, re-added in version 0.3)
 
 ## Functions
 
@@ -134,3 +134,61 @@ The `.hide()` function hides the selected elements. If the parameter is set to `
 ### `.show()`
 
 The `.show()` function shows the selected elements.
+
+### `.focus()`
+
+The `.focus()` function applies user focus to the last selected element.
+
+For example, to focus on the last `<input>` element on the page, use:
+
+```javascript
+f('input').focus();
+```
+
+### `.previous()`
+
+The `.previous() function returns an array of the previous element for each of the selected elements, `null` if non-existent.
+
+### `.next()`
+
+The `.next()` function returns an array of the next element for each of the selected elements, `null` if non-existent.
+
+### `.siblings()`
+
+The `.siblings()` function returns an array of arrays containing the siblings of each selected element (excluding the element iself).
+
+For example, consider the following HTML:
+
+```html
+<p class="select-me">Paragraph</p>
+<b class="select-me">Emphasis</b>
+<i class="select-me">Important</i>
+```
+
+Using `.siblings()`:
+
+```javascript
+f('.select-me').siblings()
+```
+returns:
+
+```javascript
+(3) [Array(2), Array(2), Array(2)]
+  0: Array(2)
+    0: b.select-me
+    1: i.select-me
+    length: 2
+    __proto__: Array(0)
+  1: Array(2)
+    0: p.select-me
+    1: i.select-me
+    length: 2
+    __proto__: Array(0)
+  2: Array(2)
+    0: p.select-me
+    1: b.select-me
+    length: 2
+    __proto__: Array(0)
+length: 3
+__proto__: Array(0)
+```
