@@ -2,7 +2,7 @@
 
 ## Selecting
 
-UltraJS uses the `f()` selector to select objects. It is based on CSS Selectors, and has the ability to select elements by id, class, tag name, attribute, etc,.
+UltraJS uses the `f()` selector to select objects or arrays of elements. It is based on CSS Selectors, and has the ability to select elements by id, class, tag name, attribute, etc,.
 
 For example, to select the element with the id `test`, use:
 
@@ -11,6 +11,16 @@ f('#test')
 ```
 
 The `f()` selector also accepts a second argument, the scope. For example, `f('#test')` is equivalent to `f('#test', document)`. (removed in version 0.2, re-added in version 0.3)
+
+**All UltraJS code should be wrapped in the `f.defer` utility method to ensure the contents of the page have been loaded**. For example:
+
+```javascript
+f.defer(function(){
+  //your UltraJS code here
+})
+```
+
+For more documentation on `.defer()`, check the **UltraJS Utilities** section below.
 
 ## Functions
 
@@ -192,12 +202,39 @@ returns:
 length: 3
 __proto__: Array(0)
 ```
+### `.text(value)`
+
+The `.text()` function returns an array of the textContent of the selected elements. If a value parameter is specified, the textContent of the selected elements will be set to the value.
+
+### `.html(value)`
+
+The `.html()` function returns an array of the innerHTML of the selected elements. If a value parameter is specified, the innerHTML of the selected elements will be set to the value.
+
+### `.matches(selector, singleValue)`
+
+The `.matches()` function checks the selected elements and returns whether the selected elements match a CSS selector. If `singleValue` is `false`, it will return an array of whether each selected element matches a selector.
+
+### `.scrollUp(px), .scrollDown(px), .scrollTop(), .scrollBottom()`
+
+The `.scrollUp(), .scrollDown(), .scrollTop(), .scrollBottom()` functions are scrolling utilities. `.scrollUp(px)` scrolls up the specified number of pixels, `.scrollDown(px)` vice versa. `.scrollTop()` returns an array of the `scrollTop` attribute of each element, `.scrollBottom()` returns an array of the `scrollBottom` attribute of each element.
 
 ## UltraJS Utilities [new]
 
-UltraJS utilities are accessed via the `window.UltraJS` object. They are useful additions to your web application.
+UltraJS utilities are accessed via the `f` object. They are useful additions to your web application.
+
+For example, to call a method below, use `f.methodName()`.
 
 The methods are:
+
+### `.defer(callback, waitForImages)`
+
+The `.defer()` function runs the callback only if the page (and images if specified) has been completely loaded. For example, the following example alerts the user that the images have been loaded once they are loaded:
+
+```javascript
+f.defer(function(){
+  alert("images have been loaded");
+}, true)
+```
 
 ### `.injectScript(src, integrity, crossorigin)`
 
@@ -208,3 +245,23 @@ For example, to inject a script, use:
 ```javascript
 UltraJS.injectScript("path/to/your/script.js")
 ```
+
+### `.setState(name, callback)`
+
+Sets a name of a state to the given callback. Used along with the `.is()` function. For example, if you want to check whether an element is the active element, you can define a state called 'active' like so:
+
+```javascript
+f.setState('active', function(e){
+  return e === document.activeElement;
+})
+```
+
+And then, to check whether the selected elements are the active element, use:
+```javascript
+f('input').is('active');
+```
+
+### `.removeState(name)`
+
+The `.removeState()` function removes a defined state.
+
